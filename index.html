@@ -6,6 +6,17 @@
 	<title>Coop Website</title>
 </head>
 <body>
+	<button onclick="test()"></button>
 
+	<script>
+		const socket = io();
+
+		function test() {
+			socket.emit('test');
+		}
+		socket.on('confirm', () => {
+			alert("test");
+		});
+	</script>
 </body>
 </html>

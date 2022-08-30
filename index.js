@@ -9,5 +9,11 @@ const d = new Date();
 app.use(express.static("Public"));
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/page.html');
+  res.sendFile(__dirname + '/index.html');
+});
+
+io.on('connection', (socket) => {
+  socket.on('test', () => {
+    socket.emit('confirm');
+  });
 });
