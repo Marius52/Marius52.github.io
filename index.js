@@ -11,7 +11,7 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server, {cors: {origin: "*"}})
 const d = new Date();
 
-app.use(express.static("Public"));
+//app.use(express.static("Public"));
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
