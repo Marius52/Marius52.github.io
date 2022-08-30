@@ -11,19 +11,12 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server, {cors: {origin: "*"}})
 const d = new Date();
 
-//app.use(express.static("Public"));
+app.use(express.static("Public"));
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-/*
-const port = process.env.PORT || 80;
-server.listen(port, () => {
-  console.log(`Listen on port ${port}...`);
-  console.log('Case Opening is running!');
-});
-*/
 io.on('connection', (socket) => {
   socket.on('test', () => {
     socket.emit('confirm');
