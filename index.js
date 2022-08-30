@@ -17,6 +17,13 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
+/*
+const port = process.env.PORT || 80;
+server.listen(port, () => {
+  console.log(`Listen on port ${port}...`);
+  console.log('Case Opening is running!');
+});
+*/
 io.on('connection', (socket) => {
   socket.on('test', () => {
     socket.emit('confirm');
