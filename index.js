@@ -9,5 +9,5 @@ const d = new Date();
 app.use(express.static("Public"));
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/page.html');
 });
